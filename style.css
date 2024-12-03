@@ -101,3 +101,54 @@ select:focus {
   border-radius: 4px;
   font-weight: bold;
 }
+
+@media screen and (max-width: 412px) and (max-height: 914px) {
+  .container {
+    max-width: 95%; /* Hampir memenuhi layar dengan margin kecil */
+    padding: 10px; /* Mengurangi padding untuk ruang sempit */
+    opacity: 1; /* Pastikan keterbacaan */
+  }
+
+  h1 {
+    font-size: 18px; /* Ukuran font lebih kecil untuk judul */
+    margin-bottom: 10px; /* Memberikan jarak agar rapi */
+  }
+
+  label {
+    font-size: 12px; /* Label lebih kecil */
+    margin-top: 8px; /* Memberikan jarak antar elemen */
+  }
+
+  input[type="number"],
+  select {
+    width: 90%; /* Memenuhi lebar layar */
+    padding: 8px; /* Padding lebih kecil agar lebih pas */
+    font-size: 14px; /* Ukuran teks input lebih kecil */
+  }
+
+  button {
+    padding: 8px 15px; /* Ukuran tombol lebih kecil */
+    font-size: 14px; /* Teks tombol menyesuaikan */
+    width: 100%; /* Tombol memenuhi lebar container */
+    margin-top: 15px; /* Jarak antar tombol dan elemen lain */
+  }
+
+  table {
+    font-size: 12px; /* Ukuran teks tabel lebih kecil */
+  }
+
+  td {
+    padding: 6px; /* Padding sel tabel lebih kecil */
+  }
+
+  .result {
+    font-size: 12px; /* Ukuran teks hasil lebih kecil */
+    padding: 10px; /* Padding hasil disesuaikan */
+    width: 100%; /* Lebar menyesuaikan */
+    text-align: center; /* Teks di tengah */
+  }
+
+  .input {
+    align-items: stretch; /* Input memenuhi lebar container */
+  }
+}
