@@ -54,13 +54,23 @@ function performOperation() {
     }
     const matrix = targetMatrix === "A" ? matrixA : matrixB;
     if (matrix.length === 2 && matrix[0].length === 2) {
+      // Determinant for 2x2 matrix
       const determinant =
         matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
       document.getElementById(
         "result"
       ).innerText = `Determinan Matriks ${targetMatrix}: ${determinant}`;
+    } else if (matrix.length === 3 && matrix[0].length === 3) {
+      // Determinant for 3x3 matrix
+      const determinant =
+        matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) -
+        matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) +
+        matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
+      document.getElementById(
+        "result"
+      ).innerText = `Determinan Matriks ${targetMatrix}: ${determinant}`;
     } else {
-      alert("Hanya mendukung determinan matriks 2x2.");
+      alert("Determinan hanya didukung untuk matriks 2x2 atau 3x3.");
     }
     return;
   }
@@ -112,6 +122,35 @@ function updateMatrix(matrix, storage) {
 }
 
 function displayResult(result, operation) {
-  document.getElementById("result").innerText =
-    `${operation} Matriks:\n` + result.map((row) => row.join(" ")).join("\n");
+  const container = document.getElementById("result");
+  container.innerHTML = `<h3>${operation} Matriks:</h3>`;
+
+  const gridContainer = document.createElement("div");
+  gridContainer.style.display = "inline-block";
+  gridContainer.style.margin = "10px auto";
+  gridContainer.style.padding = "10px";
+
+  result.forEach((row) => {
+    const rowDiv = document.createElement("div");
+    rowDiv.style.display = "flex";
+    rowDiv.style.justifyContent = "center";
+    rowDiv.style.marginBottom = "5px";
+    row.forEach((val) => {
+      const cell = document.createElement("div");
+      cell.innerText = val;
+      cell.style.width = "50px";
+      cell.style.height = "50px";
+      cell.style.display = "flex";
+      cell.style.alignItems = "center";
+      cell.style.justifyContent = "center";
+      cell.style.border = "1px solid #ccc";
+      cell.style.margin = "2px";
+      cell.style.borderRadius = "8px";
+      rowDiv.appendChild(cell);
+    });
+    gridContainer.appendChild(rowDiv);
+  });
+
+  container.appendChild(gridContainer);
 }
+
