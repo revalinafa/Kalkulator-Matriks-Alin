@@ -14,7 +14,11 @@ body {
   padding: 20px;
   background-color: rgb(26, 26, 72);
   opacity: 0.65;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 h1 {
   text-align: center;
   color: #ffffff;
@@ -26,7 +30,7 @@ label {
   color: #ffffff;
 }
 input[type="number"] {
-  width: 50%;
+  width: 90%;
   padding: 8px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -40,11 +44,15 @@ button {
   border-radius: 4px;
   cursor: pointer;
   display: block;
-  width: 40%;
+  width: fit-content;
   margin-top: 20px;
 }
 button:hover {
   background-color: #45a049;
+}
+
+.hilang {
+  border: none;
 }
 
 table {
@@ -57,6 +65,12 @@ td {
   text-align: center;
   padding: 10px;
   border: 1px solid #ccc;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 select {
@@ -78,6 +92,9 @@ select:focus {
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
   background: #f1f1f1;
   padding: 10px;

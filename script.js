@@ -17,7 +17,7 @@ function generateMatrix(matrix) {
   const container = document.getElementById(
     `matrix-${matrix.toLowerCase()}-inputs`
   );
-  container.innerHTML = `<h3>Input Matriks ${matrix}:</h3>`;
+  container.innerHTML = `<h3 style="color: white;">Input Matriks ${matrix}</h3>`;
   const inputs = [];
   for (let i = 0; i < rows; i++) {
     const row = [];

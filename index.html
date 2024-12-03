@@ -14,17 +14,28 @@
   <body>
     <div class="container">
       <h1>Perhitungan Matriks</h1>
-      <label>Masukkan Matriks A:</label>
-      <input type="number" id="a-rows" placeholder="Jumlah Baris Matriks A" />
-      <input type="number" id="a-cols" placeholder="Jumlah Kolom Matriks A" />
-      <button onclick="generateMatrix('A')">Buat Matriks A</button>
-      <div id="matrix-a-inputs"></div>
-
-      <label>Masukkan Matriks B:</label>
-      <input type="number" id="b-rows" placeholder="Jumlah Baris Matriks B" />
-      <input type="number" id="b-cols" placeholder="Jumlah Kolom Matriks B" />
-      <button onclick="generateMatrix('B')">Buat Matriks B</button>
-      <div id="matrix-b-inputs"></div>
+      <table class="hilang">
+        <tr>
+          <td class="hilang">
+            <div class="input">
+              <label>Masukkan Matriks A</label>
+              <input type="number" id="a-rows" placeholder="Jumlah Baris Matriks A" />
+              <input type="number" id="a-cols" placeholder="Jumlah Kolom Matriks A" />
+              <button onclick="generateMatrix('A')">Buat Matriks A</button>
+              <div id="matrix-a-inputs"></div>
+            </div>
+          </td>
+          <td class="hilang">
+            <div class="input">
+              <label>Masukkan Matriks B</label>
+              <input type="number" id="b-rows" placeholder="Jumlah Baris Matriks B" />
+              <input type="number" id="b-cols" placeholder="Jumlah Kolom Matriks B" />
+              <button onclick="generateMatrix('B')">Buat Matriks B</button>
+              <div id="matrix-b-inputs"></div>
+            </div>
+          </td>
+        </tr>
+      </table>
 
       <label>Pilih Operasi:</label>
       <p></p>
