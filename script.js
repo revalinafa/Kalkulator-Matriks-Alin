@@ -42,7 +42,6 @@ function generateMatrix(matrix) {
 function performOperation() {
   const operation = document.getElementById("operation").value;
 
-  // Update matrices from inputs
   updateMatrix("A", matrixA);
   updateMatrix("B", matrixB);
 
@@ -54,14 +53,12 @@ function performOperation() {
     }
     const matrix = targetMatrix === "A" ? matrixA : matrixB;
     if (matrix.length === 2 && matrix[0].length === 2) {
-      // Determinant for 2x2 matrix
       const determinant =
         matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
       document.getElementById(
         "result"
       ).innerText = `Determinan Matriks ${targetMatrix}: ${determinant}`;
     } else if (matrix.length === 3 && matrix[0].length === 3) {
-      // Determinant for 3x3 matrix
       const determinant =
         matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) -
         matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) +
@@ -75,8 +72,7 @@ function performOperation() {
     return;
   }
 
-  // Other operations (addition, subtraction, multiplication)
-  if (operation === "addition" || operation === "subtraction") {
+  if (operation === "penjumlahan" || operation === "pengurangan") {
     if (
       matrixA.length !== matrixB.length ||
       matrixA[0].length !== matrixB[0].length
@@ -86,14 +82,14 @@ function performOperation() {
     }
     const result = matrixA.map((row, i) =>
       row.map((val, j) =>
-        operation === "addition" ? val + matrixB[i][j] : val - matrixB[i][j]
+        operation === "penjumlahan" ? val + matrixB[i][j] : val - matrixB[i][j]
       )
     );
     displayResult(
       result,
-      operation === "addition" ? "Penjumlahan" : "Pengurangan"
+      operation === "penjumlahan" ? "Penjumlahan" : "Pengurangan"
     );
-  } else if (operation === "multiplication") {
+  } else if (operation === "perkalian") {
     if (matrixA[0].length !== matrixB.length) {
       alert("Jumlah kolom Matriks A harus sama dengan jumlah baris Matriks B.");
       return;
