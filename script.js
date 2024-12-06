@@ -150,3 +150,4 @@ function displayResult(result, operation) {
   container.appendChild(gridContainer);
 }
 
+
